@@ -1,0 +1,6 @@
+name: SwiftCrate
+version: '1.0-SNAPSHOT'
+main: org.bc.swiftCrate.SwiftCrate
+api-version: '1.20'
+authors: [ banchen21 ]
+description: 一个互通服使用的菜单插件
