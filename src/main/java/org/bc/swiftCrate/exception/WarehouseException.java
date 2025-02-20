@@ -1,5 +1,6 @@
 package org.bc.swiftCrate.exception;
 
+import lombok.Getter;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.UUID;
@@ -43,6 +44,7 @@ public class WarehouseException extends RuntimeException {
     /**
      * 错误代码枚举（包含国际化的消息key）
      */
+    @Getter
     public enum ErrorCode {
         // 验证错误 (1xxx)
         INVALID_NAME(1001, "error.validation.name"),
@@ -70,31 +72,5 @@ public class WarehouseException extends RuntimeException {
             this.messageKey = messageKey;
         }
 
-        public int getCode() {
-            return code;
-        }
-
-        public String getMessageKey() {
-            return messageKey;
-        }
     }
 }
-
-// region 具体异常类型
-//--------------------------------------------------
-// 验证异常
-//--------------------------------------------------
-
-//--------------------------------------------------
-// 权限异常
-//--------------------------------------------------
-
-//--------------------------------------------------
-// 存储操作异常
-//--------------------------------------------------
-
-//--------------------------------------------------
-// 系统级异常
-//--------------------------------------------------
-
-// endregion

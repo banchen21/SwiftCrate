@@ -1,0 +1,13 @@
+database:
+  type: sqlite  # 可选值：sqlite 或 mysql
+
+  mysql:
+    host: localhost
+    port: 3306
+    database: warehouse
+    username: root
+    password: your_password
+
+private: 27
+group: 36
+public: 54

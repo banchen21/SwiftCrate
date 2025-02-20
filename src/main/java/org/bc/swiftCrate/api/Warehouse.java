@@ -7,6 +7,7 @@ import java.util.UUID;
 
 @Getter
 @Setter
+
 public class Warehouse {
     //    仓库编号
     private UUID id;
@@ -21,6 +22,14 @@ public class Warehouse {
 
     public Warehouse(String name, UUID owner, WarehouseType type, int capacity) {
         this.id = UUID.randomUUID();
+        this.name = name;
+        this.owner = owner;
+        this.type = type;
+        this.capacity = capacity;
+    }
+
+    public Warehouse(UUID id, String name, UUID owner, WarehouseType type, int capacity) {
+        this.id = id;
         this.name = name;
         this.owner = owner;
         this.type = type;
