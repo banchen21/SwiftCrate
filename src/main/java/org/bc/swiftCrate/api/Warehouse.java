@@ -3,6 +3,7 @@ package org.bc.swiftCrate.api;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -19,6 +20,8 @@ public class Warehouse {
     private final WarehouseType type;
     //    仓库容量
     private final int capacity;
+//    仓库内物品
+    private List<WarehouseItem> items;
 
     public Warehouse(String name, UUID owner, WarehouseType type, int capacity) {
         this.id = UUID.randomUUID();

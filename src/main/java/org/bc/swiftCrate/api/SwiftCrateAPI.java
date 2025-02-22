@@ -87,17 +87,16 @@ public interface SwiftCrateAPI {
      * @param items       要存入的物品数组
      * @return 实际成功存入的物品数量
      */
-    int depositItems(UUID warehouseId, UUID depositor, ItemStack[] items);
+    boolean depositItems(UUID warehouseId, UUID depositor, ItemStack items);
 
     /**
      * 从仓库取出物品（需要 swiftcrate.item.withdraw 权限）
      *
      * @param warehouseId 仓库ID
-     * @param withdrawer  取出者UUID
-     * @param maxItems    最大取出数量
+     * @param warehouseItem  物品UUID
      * @return 取出的物品数组（可能小于请求数量）
      */
-    ItemStack[] withdrawItems(UUID warehouseId, UUID withdrawer, int maxItems);
+    ItemStack withdrawItems(UUID warehouseId, UUID warehouseItem);
     //endregion
 
     //region 高级功能
@@ -124,22 +123,6 @@ public interface SwiftCrateAPI {
     //endregion
 
     //region 查询接口
-
-    /**
-     * 根据ID获取仓库详情（需要访问权限）
-     *
-     * @param warehouseId 仓库ID
-     * @param requester   请求者UUID
-     * @return Warehouse对象或null（无权限时返回null）
-     */
-    Warehouse getWarehouseById(UUID warehouseId, UUID requester);
-
-    /**
-     * 检查玩家对仓库的权限
-     *
-     * @param warehouseId 仓库ID
-     * @param playerUUID  玩家UUID
-     * @return 权限级别：0=无权限, 1=成员, 2=所有者, 3=管理员
-     */
-    int getAccessLevel(UUID warehouseId, UUID playerUUID);
+//    获取仓库内物品id
+    List<UUID> getWarehouseItems(UUID warehouseId);
 }
